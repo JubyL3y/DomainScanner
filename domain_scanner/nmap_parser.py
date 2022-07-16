@@ -43,12 +43,3 @@ class NMAPScanObject:
                 " ".join(info)
             ))
             cur_pos += 1      
-
-if __name__ == "__main__":
-    with open("../dtf.ru/ws-sio.dtf.ru", "r") as i_f:
-        data = i_f.read()
-    with open("../dtf.ru/api.dtf.ru", "r") as i_f:
-        data = i_f.read()
-    obj = NMAPScanObject(data)
-    for p in obj.ports:
-        print(p)
