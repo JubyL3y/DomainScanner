@@ -8,16 +8,13 @@ DomainScanner is small tool written in python 3 for automate search and scan sub
 -   Checks for ssl and http port availability for the web browser
 
 ## Based On 
------
 - [Sublist3r](https://github.com/aboul3la/Sublist3r) By Ahmed Aboul-Ela - twitter.com/aboul3la
 - [Nmap](https://nmap.org/)
 
 ## Recommended Python version
----
 Domain Scanner currently supports only Python 3.8+
 
 ## Installation
----
 Domain Scanner depends on argparse, dnspython and requests.
 It is necessary that the PATH variable contains the directory with the nmap executable file
 - Installing with venv from source on Linux:
@@ -38,7 +35,6 @@ python3 -m venv venv
 python -m pip install -r requirements.txt
 ```
 ## Usage
-----
 ```
 cd Domain Scanner
 source ./venv/bin/activate
@@ -46,7 +42,6 @@ python -m domain_scanner [-h] -d DOMAIN [-p PROJECT_FOLDER] [-nf NMAP_FLAGS] [-d
 ```
 
 ## Options
-----
 ```
   -h, --help            show this help message and exit
   -d DOMAIN, --domain DOMAIN
