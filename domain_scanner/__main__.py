@@ -137,13 +137,16 @@ with open(f"{project_folder}/webportsinfo", "w") as o_f:
         if len(v.ports) == 0:
             pass
         for p in v.ports:
-            if p.service == "http":
-                url = f"http://{k}:{p.port}"
-                resp = requests.get(url)
-                print(f"Found http port: {url} with status code: {resp.status_code}")
-                o_f.write(f"{url}    {resp.status_code}\n")
-            if p.service.find("ssl")!=-1:
-                url = f"https://{k}:{p.port}"
-                resp = requests.get(url)
-                print(f"Found ssl port: {url} with status code: {resp.status_code}")
-                o_f.write(f"{url}    {resp.status_code}\n")
+            try:
+                if p.service == "http":
+                    url = f"http://{k}:{p.port}"
+                    resp = requests.get(url)
+                    print(f"Found http port: {url} with status code: {resp.status_code}")
+                    o_f.write(f"{url}    {resp.status_code}\n")
+                if p.service.find("ssl")!=-1:
+                    url = f"https://{k}:{p.port}"
+                    resp = requests.get(url)
+                    print(f"Found ssl port: {url} with status code: {resp.status_code}")
+                    o_f.write(f"{url}    {resp.status_code}\n")
+            except Exception as e:
+                print(f"[ERROR} {e}")
