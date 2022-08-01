@@ -149,4 +149,4 @@ with open(f"{project_folder}/webportsinfo", "w") as o_f:
                     print(f"Found ssl port: {url} with status code: {resp.status_code}")
                     o_f.write(f"{url}    {resp.status_code}\n")
             except Exception as e:
-                print(f"[ERROR} {e}")
+                print(f"[ERROR] {e}")
